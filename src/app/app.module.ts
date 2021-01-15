@@ -1,3 +1,4 @@
+import { LivrosModule } from './livros/livros.module';
 import { TemplateModule } from './template/template.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -9,12 +10,13 @@ import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TemplateModule
+    TemplateModule,
+    LivrosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
