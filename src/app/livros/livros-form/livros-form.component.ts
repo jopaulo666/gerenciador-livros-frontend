@@ -1,3 +1,4 @@
+import { LivrosService } from './../../livros.service';
 import { Livro } from './../livro';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,9 +11,16 @@ export class LivrosFormComponent implements OnInit {
 
   livro: Livro;
 
-  constructor() { }
+  constructor( private service: LivrosService ) { 
+    this.livro = new Livro();
+  }
 
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    this.service.salvar(this.livro).subscribe(response => {
+      console.log(response);
+    })
+  }
 }

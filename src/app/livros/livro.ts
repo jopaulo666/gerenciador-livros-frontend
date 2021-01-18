@@ -3,5 +3,5 @@ export class Livro {
     titulo: string;
     autor: string;
     descricao: string;
-    dataCadstro: string;
+    dataCadastro: string;
 }
