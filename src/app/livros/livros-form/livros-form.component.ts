@@ -1,3 +1,4 @@
+import { Livro } from './../livro';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./livros-form.component.css']
 })
 export class LivrosFormComponent implements OnInit {
+
+  livro: Livro;
 
   constructor() { }
 
