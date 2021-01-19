@@ -14,22 +14,22 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3">
+        <div class="row" *ngIf="livro.id">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label>ID:</label>
                     <input type="text" class="form-control" disabled="true" name="id" [ngModel]="livro.id"/>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label>Data de cadastro:</label>
-                    <input type="text" class="form-control" disabled="true" name="dataCadastro" [ngModel]="livro.dataCadastro"/>
+                    <input type="date" class="form-control" disabled="true" name="dataCadastro" [ngModel]="livro.dataCadastro"/>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="form-group">
                     <label>Título: *</label>
                     <input type="text" class="form-control" name="titulo" [(ngModel)]="livro.titulo"/>
@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="form-group">
                     <label>Autor: *</label>
                     <input type="text" class="form-control" name="autor" [(ngModel)]="livro.autor"/>
@@ -60,5 +60,6 @@
                 </button>
             </div>
         </div>
+        <br>
     </form>
 </div>

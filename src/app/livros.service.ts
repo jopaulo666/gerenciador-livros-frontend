@@ -15,12 +15,9 @@ export class LivrosService {
    salvar (livro: Livro) : Observable<Livro> {
      return this.http.post<Livro>('http://localhost:8080/api/livros', livro);
    }
-
-  getLivros() : Livro {
-    let livro : Livro = new Livro();
-    livro.titulo = "O Alquimista";
-    livro.autor = "Paulo Coelho";
-    livro.descricao = "Uma histporia de alquimista";
-    return livro;
+   
+   getLivros() : Observable<Livro[]> {
+    return this.http.get<Livro[]>('http://localhost:8080/api/livros');
   }
+  
 }

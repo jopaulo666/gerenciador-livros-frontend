@@ -4,16 +4,18 @@ import { FormsModule } from '@angular/forms'
 
 import { LivrosRoutingModule } from './livros-routing.module';
 import { LivrosFormComponent } from './livros-form/livros-form.component';
+import { LivrosListaComponent } from './livros-lista/livros-lista.component';
 
 
 @NgModule({
-  declarations: [LivrosFormComponent],
+  declarations: [LivrosFormComponent, LivrosListaComponent],
   imports: [
     CommonModule,
     LivrosRoutingModule,
     FormsModule
   ], exports: [
-    LivrosFormComponent
+    LivrosFormComponent,
+    LivrosListaComponent
   ]
 })
 export class LivrosModule { }

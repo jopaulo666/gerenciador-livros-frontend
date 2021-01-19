@@ -21,9 +21,14 @@ export class LivrosFormComponent implements OnInit {
   }
 
   onSubmit(){
-    this.service.salvar(this.livro).subscribe(response => {
+    this.service
+    .salvar(this.livro)
+    .subscribe(response => {
       this.success = true;
+      this.errors = null;
+      this.livro = response;
     }, errorResponse => {
+      this.success = false;
       this.errors = errorResponse.error.errors;
       
     })
