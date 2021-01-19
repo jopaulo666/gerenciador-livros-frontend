@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path: 'livros-form', component: LivrosFormComponent},
+  {path: 'livros-form/:id', component: LivrosFormComponent},
   {path: 'livros-lista', component: LivrosListaComponent}
 ];
 

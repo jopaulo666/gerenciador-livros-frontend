@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-2">
-            <button class="btn btn-primary">
+            <button class="btn btn-primary" (click)="novoCadastro()">
                 <i class="fa fa-plus"></i> Novo
             </button>
         </div>
@@ -31,7 +31,11 @@
                         <td>{{livro.autor}}</td>
                         <td>{{livro.descricao}}</td>
                         <td>{{livro.dataCadastro}}</td>
-                        <td></td>
+                        <td>
+                            <button type="button" class="btn btn-link" title="Editar" routerLink="/livros-form/{{ livro.id }}" >
+                                <i class="fa fa-pencil-alt"></i>
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
