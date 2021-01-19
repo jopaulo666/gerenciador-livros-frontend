@@ -12,11 +12,11 @@ export class LivrosService {
     
    }
 
-   salvar (livro: Livro) : Observable<Livro> {
+   salvar(livro: Livro) : Observable<Livro> {
      return this.http.post<Livro>('http://localhost:8080/api/livros', livro);
    }
 
-   atualizar (livro: Livro) : Observable<any> {
+   atualizar(livro: Livro) : Observable<any> {
     return this.http.put<Livro>(`http://localhost:8080/api/livros/${livro.id}`, livro);
   }
    
@@ -26,6 +26,10 @@ export class LivrosService {
 
   getLivrosById(id: number) : Observable<Livro> {
     return this.http.get<any>(`http://localhost:8080/api/livros/${id}`);
+  }
+
+  deletar(livro: Livro) : Observable<any> {
+    return this.http.delete<any>(`http://localhost:8080/api/livros/${livro.id}`);
   }
   
 }

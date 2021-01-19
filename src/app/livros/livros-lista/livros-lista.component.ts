@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 export class LivrosListaComponent implements OnInit {
 
   livros: Livro[] = [];
+  livroSelecionado: Livro;
+  msgSucesso: String;
+  msgErro: String;
 
   constructor(private service: LivrosService, private router: Router) { }
 
@@ -20,6 +23,22 @@ export class LivrosListaComponent implements OnInit {
 
   novoCadastro(){
     this.router.navigate(['/livros-form'])
+  }
+
+  preparaDelecao(livro: Livro) {
+    this.livroSelecionado = livro;
+  }
+
+  deletarLivro(){
+    this.service
+      .deletar(this.livroSelecionado)
+      .subscribe(
+        response => [
+          this.msgSucesso = 'Livro excluido com sucesso!',
+          this.ngOnInit()
+        ],
+        erro => this.msgErro = 'Erro ao tentar excluir livro.'
+      )
   }
 
 }
