@@ -1,7 +1,7 @@
-import { environment } from '../environments/environment'
+import { environment } from './../environments/environment';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Usuario } from './login/usuario';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,9 +9,9 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  apiURL: string = environment.apiURLBase + "/api/usuarios"
+  apiURL: string = environment.apiURLBase = "/api/usuarios"
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient ) { }
 
   salvar(usuario: Usuario) : Observable<any> {
     return this.http.post<any>(this.apiURL, usuario);

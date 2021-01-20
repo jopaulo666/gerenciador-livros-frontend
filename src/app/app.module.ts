@@ -26,11 +26,11 @@ import { LayoutComponent } from './layout/layout.component';
     HttpClientModule,
     AppRoutingModule,
     TemplateModule,
-    LivrosModule,
-    AuthService
+    LivrosModule
   ],
   providers: [
-    LivrosService
+    LivrosService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
