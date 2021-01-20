@@ -22,7 +22,7 @@ export class LivrosListaComponent implements OnInit {
   }
 
   novoCadastro(){
-    this.router.navigate(['/livros-form'])
+    this.router.navigate(['/livros/form'])
   }
 
   preparaDelecao(livro: Livro) {

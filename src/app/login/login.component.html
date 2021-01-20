@@ -11,7 +11,10 @@
                                 </h3>
                             </div>
                             <div class="card-body">
-                                <div class="alert alert-danger" *ngIf="loginError">
+                                <div class="alert alert-danger" *ngIf="mensagemSucesso">
+                                    {{mensagemSucesso}}
+                                </div>
+                                <div class="alert alert-success" *ngIf="loginError">
                                     Login inválido!
                                 </div>
                                 <form #loginForm="ngForm" (submit)="onSubmit();">
@@ -26,13 +29,13 @@
                                             class="form-control py-4" placeholder="Digite sua senha" />
                                     </div>
                                     <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                        <button type="submit" class="btn btn-primary" *ngIf="!cadastrar">
+                                        <button type="submit" class="btn btn-primary" *ngIf="!cadastrando">
                                             Entrar
                                         </button>
-                                        <button type="button" class="btn btn-primary" *ngIf="cadastrar">
+                                        <button type="button" class="btn btn-primary" *ngIf="cadastrando" (click)="cadastrar()">
                                             Cadastrar
                                         </button>
-                                        <button type="button" class="btn btn-danger text-lefter" *ngIf="cadastrar"
+                                        <button type="button" class="btn btn-danger text-lefter" *ngIf="cadastrando"
                                             (click)="cancelaCadastro();">
                                             Cancelar
                                         </button>

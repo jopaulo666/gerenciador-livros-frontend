@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { FormsModule } from '@angular/forms';
 import { LivrosService } from './livros.service';
 import { LivrosModule } from './livros/livros.module';
@@ -25,7 +26,8 @@ import { LayoutComponent } from './layout/layout.component';
     HttpClientModule,
     AppRoutingModule,
     TemplateModule,
-    LivrosModule
+    LivrosModule,
+    AuthService
   ],
   providers: [
     LivrosService

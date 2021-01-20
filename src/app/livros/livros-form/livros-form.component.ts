@@ -41,7 +41,7 @@ export class LivrosFormComponent implements OnInit {
   }
 
   voltarListagem() {
-    this.router.navigate(['/livros-lista'])
+    this.router.navigate(['/livros/lista'])
   }
 
   onSubmit() {
